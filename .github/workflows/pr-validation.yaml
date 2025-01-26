@@ -9,10 +9,10 @@ jobs:
     steps: 
       - name: checkout repository
         uses: actions/checkout@v4
-      - name: linting HTML and CSS
-        run: 
-          npx htmlhint "**/*.html"
-          npx stylelint "**/*.css"
+      - name: Lint HTML files
+        run: npx htmlhint "**/*.html"
+      - name: Lint CSS Files
+        run: npx stylelint "**/*.css"
   build-job:
     needs: linting-job
     runs-on: ubuntu-latest
